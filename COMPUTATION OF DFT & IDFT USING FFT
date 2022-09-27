@@ -1,0 +1,32 @@
+# digital-signal-processing-
+clc;
+close;
+
+//Computation of DFT by using FFT
+x=input('Enter the input sequence');
+n=0:1:length(x)-1;
+
+subplot(3,1,1);
+plot2d3(n,x);
+xlabel('Time n'); 
+ylabel('Amplitude');
+title('Input Sequence');
+
+Xk = fft(x);
+disp(Xk);
+K1=0:1:length(Xk)-1;
+subplot(3,1,2);
+plot2d3(K1,Xk);
+xlabel('freq k');
+ylabel('X(K)');
+title('DFT of x(n)')
+
+//computation of IDFT from FFT%
+
+y=fft(Xk,1);
+disp(y);
+subplot(3,1,3);
+plot2d3(n,y);
+xlabel('time n');
+ylabel('IDFT of X(k)= x(n)');
+title('Inverse DFT x(n)');
