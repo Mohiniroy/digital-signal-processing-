@@ -1,0 +1,35 @@
+x= input('Enter any sequence x(n)');
+ figure(1);
+subplot(2,1,1);
+ stem(x); 
+xlabel('Time period');
+ylabel('Amplitude');
+title('Input sequence'); 
+Rxx=xcorr(x)
+subplot(2,1,2);
+stem(Rxx);
+ xlabel('Time period'); 
+ylabel('Amplitude');
+title('Auto correlation');
+
+ 
+%Cross correlation% 
+x=input('Enter any sequence x(n)');
+figure(2);
+subplot(3,1,1); 
+stem(x); 
+xlabel('Time period'); 
+ylabel('Amplitude'); 
+title('Input sequence');
+ h=input('Enter any sequence h(n)'); 
+subplot(3,1,2); 
+stem(h); 
+xlabel('Time period'); 
+ylabel('Amplitude');
+title('Impulse sequence');
+Rxy =xcorr(x,h)
+subplot(3,1,3); 
+stem(Rxy); 
+xlabel('Time period'); 
+ylabel('Amplitude');
+title('Cross correlation');
