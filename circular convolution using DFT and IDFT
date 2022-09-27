@@ -1,0 +1,45 @@
+
+clc;
+close;
+
+x=input('enter the input sequence :');
+N=input('enter the length of the input sequence :');
+h=input('enter the impulse sequence :');
+M=input('enter the length of the impulse sequence :');
+if N>M then
+  H=[h,zeros(1,N-M)];  
+else
+  H=h;
+end
+if M>N then
+  X=[x,zeros(1,M-N)];  
+else
+  X=x;
+end
+
+x1=fft(X,-1);
+disp(x1);
+h1=fft(H,-1);
+disp(h1);
+Y=x1.*h1;
+y=fft(Y,1)
+disp(y);
+
+subplot(3,1,1);
+plot2d3(x);
+xlabel('sequence n--> :');
+ylabel('x(n)');
+title('1.input sequence');
+
+subplot(3,1,2);
+plot2d3(h);
+xlabel('sequence n--> :');
+ylabel('h(n)');
+title('2.impulse sequence');
+
+subplot(3,1,3);
+plot2d3(y);
+
+xlabel('sequence n-->');
+ylabel('y(n)');
+title('3.output sequence');
