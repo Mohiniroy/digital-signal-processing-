@@ -1,0 +1,25 @@
+# digital-signal-processing-
+
+x=input('enter the  four point input sequence :');
+h=input('enter the four point impulse sequence:');
+y=conv(x,h,"same");
+disp(y);
+
+subplot(3,1,1);
+plot2d3(x);
+xlabel('sequence n--> :');
+ylabel('x(n)');
+title('1.input sequence');
+
+subplot(3,1,2);
+plot2d3(h);
+xlabel('sequence n--> :');
+ylabel('h(n)');
+title('2.impulse sequence');
+
+subplot(3,1,3);
+plot2d3(y);
+xlabel('sequence n-->');
+ylabel('y(n)');
+title('3.output sequence');
+
