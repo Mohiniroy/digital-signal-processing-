@@ -1,0 +1,27 @@
+# digital-signal-processing-
+clc;
+close;
+N=input('input length of the input signal sequnce');
+M=input('downsampling factor=');
+//generate the input sequence for the specified length N
+n=0:N-1;
+//m=0:N*M-1;
+x=n;
+disp(x);
+
+//generate the upsampled signal
+y=x([1:M:length(x)]);
+disp(y);
+
+//plot the input sequence
+subplot(2,1,1);
+plot2d3(n,x(1:N));
+title('input sequence');
+xlabel('time n');
+ylabel('amplitude');
+
+subplot(2,1,2);
+plot2d3(y);
+title('Decimated sequence');
+xlabel('time n');
+ylabel('amplitude');
