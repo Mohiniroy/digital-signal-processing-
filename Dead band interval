@@ -1,0 +1,19 @@
+# digital-signal-processing-
+
+clc; 
+clear; 
+n=-1; 
+y=12;
+flag=1; 
+while n<8
+n=n+1;
+
+y=[y 0.9*y(n+1)]; 
+yr=round(y);
+end;
+ disp('n=',n);
+disp('y(n)-exact',y);
+
+disp('y(n)-rounded',yr);
+
+disp('Deadband interval ',[-yr(n+2) yr(n+2)])
